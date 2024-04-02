@@ -1,10 +1,7 @@
-import propTypes from "prop-types";
-import Card from "@mui/material/Card";
-import Grid from "@mui/material/Grid";
-
-import { FC } from "react";
-import { MovieCardProps } from "./types";
 import Image from "next/image";
+import { FC } from "react";
+
+import { MovieCardProps } from "./types";
 
 export const MovieCard: FC<MovieCardProps> = ({
   title,
@@ -19,7 +16,7 @@ export const MovieCard: FC<MovieCardProps> = ({
       : description;
 
   return (
-    <Grid container item xs={12} md={9} xl={6}>
+    <div>
       <div className="grid grid-cols-1 sm:grid-cols-2 p-4 m-4">
         <div className="w-full">
           <Image src={posterUrl} alt="poster" width={500} height={500} />
@@ -33,6 +30,6 @@ export const MovieCard: FC<MovieCardProps> = ({
           </div>
         </div>
       </div>
-    </Grid>
+    </div>
   );
 };

@@ -1,13 +1,9 @@
-import Grid from "@mui/material/Grid";
-import Slide from "@mui/material/Slide";
-import Typography from "@mui/material/Typography";
-
-// import { useSelector } from 'react-redux';
-
-// import loadingGif from "../../../assets/ghibli-loading.gif";
-import { FC, useCallback, useEffect, useState } from "react";
-import { MovieCard } from "..";
 import axios from "axios";
+// import { useSelector } from 'react-redux';
+// import loadingGif from "../../../assets/ghibli-loading.gif";
+import { FC } from "react";
+
+import { MovieCard } from "..";
 
 type Movie = {
   id: string;
@@ -52,13 +48,5 @@ export const MoviesList: FC = async () => {
     />
   ));
 
-  return (
-    <div className="flex flex-col items-center">
-      <div className="mt-10">
-        <span>Studio Ghibli</span>
-        <span> スタジオジブリ</span>
-      </div>
-      {list}
-    </div>
-  );
+  return <div className="flex flex-col items-center">{list}</div>;
 };
