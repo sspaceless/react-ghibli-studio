@@ -6,6 +6,7 @@ const nextConfig = {
       { hostname: "www.themoviedb.org" },
     ],
   },
+  output: "standalone",
 };
 
 export default nextConfig;
