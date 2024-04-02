@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "I ♡ GHIBLI",
-  description: "Page with your favorite Studio Ghibli movies",
+  description: "Website with your favorite Studio Ghibli movies",
 };
 
 const RootLayout = ({
@@ -23,4 +23,3 @@ const RootLayout = ({
 };
 
 export default RootLayout;
-
