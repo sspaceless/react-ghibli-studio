@@ -1,9 +1,14 @@
 import "./globals.css";
 
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
+import Head from "next/head";
 
-const inter = Inter({ subsets: ["latin"] });
+const futuraBook = localFont({
+  src: "../../public/fonts/FuturaPT-Book.woff",
+  display: "swap",
+  variable: "--font-futura-book",
+});
 
 export const metadata: Metadata = {
   title: "I ♡ GHIBLI",
@@ -17,7 +22,13 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <Head>
+        <link
+          href="https://fonts.cdnfonts.com/css/futura-std-4"
+          rel="stylesheet"
+        />
+      </Head>
+      <body className={futuraBook.className}>{children}</body>
     </html>
   );
 };
