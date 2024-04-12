@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-4">
       <Header />
-      <div className="flex min-h-screen flex-col items-center justify-between w-9/12">
+      <div className="flex min-h-screen flex-col items-center justify-between w-full md:w-9/12">
         <MoviesList />
       </div>
     </main>
@@ -13,4 +13,3 @@ const Home = () => {
 };
 
 export default Home;
-

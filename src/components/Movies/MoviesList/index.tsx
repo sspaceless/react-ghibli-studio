@@ -44,9 +44,10 @@ export const MoviesList: FC = async () => {
       originalTitle={movie.original_title}
       originalTitleRomanised={movie.original_title_romanised}
       description={movie.description}
-      posterUrl={movie.image}
+      imageSrc={movie.image}
+      bannerSrc={movie.movie_banner}
     />
   ));
 
-  return <div className="flex flex-col items-center">{list}</div>;
+  return <div className="flex flex-col items-center gap-4 mt-4">{list}</div>;
 };

@@ -11,6 +11,7 @@ const config: Config = {
       futura: ["var(--font-futura-book)"],
     },
     colors: {
+      white: "#ffffff",
       accent: {
         DEFAULT: "#009AEC",
         dark: "#009AEC",

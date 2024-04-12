@@ -5,9 +5,6 @@ import Button from "@mui/material/Button";
 import Image from "next/image";
 import { FC, useEffect, useState } from "react";
 
-import logoDark from "../../assets/ghibli-logo-dark.svg";
-import logoLight from "../../assets/ghibli-logo-light.svg";
-
 export const Header: FC = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
@@ -34,6 +31,8 @@ export const Header: FC = () => {
     // navigate("/");
   };
 
+  const logoSrc = `/ghibli-logo-${isDarkMode ? "dark" : "light"}.svg`;
+
   return (
     <div className="flex w-full">
       <div className="flex justify-between w-full">
@@ -43,7 +42,7 @@ export const Header: FC = () => {
 
         <div className="flex flex-row gap-4">
           <Image
-            src={isDarkMode ? logoDark : logoLight}
+            src={logoSrc}
             alt="Studio Ghibli logo"
             width={80}
             height={80}
@@ -57,7 +56,7 @@ export const Header: FC = () => {
 
         <div className="flex col items-center">
           <Button
-            variant="outlined"
+            color="inherit"
             startIcon={<GoogleIcon />}
             onClick={undefined}
             fullWidth
