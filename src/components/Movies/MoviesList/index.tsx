@@ -27,7 +27,7 @@ export const MoviesList: FC = async () => {
   // const isLoading = useSelector((state) => state.moviesData.isLoading);
 
   const response = await axios.get<Movie[]>(
-    "https://ghibliapi.vercel.app/films"
+    "https://ghibliapi.vercel.app/films",
   );
 
   const movies = response.data;
@@ -49,5 +49,5 @@ export const MoviesList: FC = async () => {
     />
   ));
 
-  return <div className="flex flex-col items-center gap-4 mt-4">{list}</div>;
+  return <div className="mt-4 flex flex-col items-center gap-4">{list}</div>;
 };

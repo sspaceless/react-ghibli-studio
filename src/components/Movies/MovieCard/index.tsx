@@ -18,7 +18,7 @@ export const MovieCard: FC<MovieCardProps> = ({
       : description;
 
   return (
-    <div className="rounded-xl flex flex-col sm:flex-row gap-4 bg-white text-celadon">
+    <div className="flex flex-col gap-4 rounded-xl bg-white text-celadon sm:flex-row">
       <div className="sm:hidden">
         <Image
           src={bannerSrc}
@@ -37,7 +37,7 @@ export const MovieCard: FC<MovieCardProps> = ({
           height={500}
         />
       </div>
-      <div className="flex flex-col p-4 sm:pl-0 pt-0 sm:pt-4 justify-center">
+      <div className="flex flex-col justify-center p-4 pt-0 sm:pl-0 sm:pt-4">
         <span className="text-3xl">{title}</span>
         <span className="text-xl">{originalTitle}</span>
         <span className="text-xl">{originalTitleRomanised}</span>

@@ -10,7 +10,7 @@ export const Header: FC = () => {
 
   useEffect(() => {
     const darkModeMediaQuery = window.matchMedia(
-      "(prefers-color-scheme: dark)"
+      "(prefers-color-scheme: dark)",
     );
 
     const handleDarkModeChange = (event: {
@@ -35,7 +35,7 @@ export const Header: FC = () => {
 
   return (
     <div className="flex w-full">
-      <div className="flex justify-between w-full">
+      <div className="flex w-full justify-between">
         <Button color="inherit" onClick={homeButtonClickHandler}>
           I ♡ Ghibli
         </Button>
@@ -48,13 +48,13 @@ export const Header: FC = () => {
             height={80}
           />
 
-          <div className="flex flex-col mt-10">
+          <div className="mt-10 flex flex-col">
             <span>Studio Ghibli</span>
             <span> スタジオジブリ</span>
           </div>
         </div>
 
-        <div className="flex col items-center">
+        <div className="col flex items-center">
           <Button
             color="inherit"
             startIcon={<GoogleIcon />}
