@@ -54,7 +54,7 @@ export const Header: FC = () => {
           </div>
         </div>
 
-        <div className="col flex items-center">
+        <div className="flex items-center">
           <Button
             color="inherit"
             startIcon={<GoogleIcon />}

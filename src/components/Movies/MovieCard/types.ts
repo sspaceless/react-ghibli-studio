@@ -4,6 +4,6 @@ export type MovieCardProps = {
   originalTitle: string;
   originalTitleRomanised: string;
   description: string;
-  imageSrc: string;
-  bannerSrc: string;
+  imageUrl: string;
+  bannerUrl: string;
 };

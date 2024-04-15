@@ -1,38 +1,17 @@
 import axios from "axios";
-// import { useSelector } from 'react-redux';
-// import loadingGif from "../../../assets/ghibli-loading.gif";
 import { FC } from "react";
 
-import { MovieCard } from "..";
-
-type Movie = {
-  id: string;
-  title: string;
-  original_title: string;
-  original_title_romanised: string;
-  description: string;
-  director: string;
-  producer: string;
-  release_date: string;
-  running_time: string;
-  rt_score: string;
-  url: string;
-  image: string;
-  movie_banner: string;
-};
+import { MovieCard } from "../MovieCard";
+import { GetMoviesResponse } from "./types";
 
 export const MoviesList: FC = async () => {
-  // const error = useSelector((state) => state.moviesData.error);
-  // const movies = useSelector((state) => state.moviesData.movies);
-  // const isLoading = useSelector((state) => state.moviesData.isLoading);
-
-  const response = await axios.get<Movie[]>(
+  const response = await axios.get<GetMoviesResponse[]>(
     "https://ghibliapi.vercel.app/films",
   );
 
   const movies = response.data;
 
-  if (!movies) {
+  if (!response.data) {
     return <p>Found no movies.</p>;
   }
 
@@ -44,8 +23,8 @@ export const MoviesList: FC = async () => {
       originalTitle={movie.original_title}
       originalTitleRomanised={movie.original_title_romanised}
       description={movie.description}
-      imageSrc={movie.image}
-      bannerSrc={movie.movie_banner}
+      imageUrl={movie.image}
+      bannerUrl={movie.movie_banner}
     />
   ));
 

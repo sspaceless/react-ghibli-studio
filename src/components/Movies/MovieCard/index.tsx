@@ -9,8 +9,8 @@ export const MovieCard: FC<MovieCardProps> = ({
   originalTitle,
   originalTitleRomanised,
   description,
-  imageSrc,
-  bannerSrc,
+  imageUrl,
+  bannerUrl,
 }) => {
   const previewDescription =
     description.length > 301
@@ -21,7 +21,7 @@ export const MovieCard: FC<MovieCardProps> = ({
     <div className="flex flex-col gap-4 rounded-xl bg-white text-celadon sm:flex-row">
       <div className="sm:hidden">
         <Image
-          src={bannerSrc}
+          src={bannerUrl}
           alt={`${id}-banner`}
           className="rounded-t-xl"
           width={1000}
@@ -30,7 +30,7 @@ export const MovieCard: FC<MovieCardProps> = ({
       </div>
       <div className="hidden sm:block sm:min-w-[300px] lg:min-w-[400px]">
         <Image
-          src={imageSrc}
+          src={imageUrl}
           alt={`${id}-image`}
           className=" rounded-l-xl"
           width={500}
