@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Head from "next/head";
 
+import NextSessionProvider from "./context/client-provider";
+
 const futuraBook = localFont({
   src: "../../public/fonts/FuturaPT-Book.woff",
   display: "swap",
@@ -15,7 +17,7 @@ export const metadata: Metadata = {
   description: "Website with your favorite Studio Ghibli movies",
 };
 
-const RootLayout = ({
+const RootLayout = async ({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -28,7 +30,9 @@ const RootLayout = ({
           rel="stylesheet"
         />
       </Head>
-      <body className={futuraBook.className}>{children}</body>
+      <body className={futuraBook.className}>
+        <NextSessionProvider>{children}</NextSessionProvider>
+      </body>
     </html>
   );
 };

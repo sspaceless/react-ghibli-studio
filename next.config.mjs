@@ -4,6 +4,7 @@ const nextConfig = {
     remotePatterns: [
       { hostname: "image.tmdb.org" },
       { hostname: "www.themoviedb.org" },
+      {hostname: "lh3.googleusercontent.com"},
     ],
   },
   output: "standalone",

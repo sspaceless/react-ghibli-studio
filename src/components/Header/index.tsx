@@ -3,10 +3,12 @@
 import GoogleIcon from "@mui/icons-material/Google";
 import Button from "@mui/material/Button";
 import Image from "next/image";
+import { signIn, useSession } from "next-auth/react";
 import { FC, useEffect, useState } from "react";
 
 export const Header: FC = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const { data } = useSession();
 
   useEffect(() => {
     const darkModeMediaQuery = window.matchMedia(
@@ -54,11 +56,24 @@ export const Header: FC = () => {
           </div>
         </div>
 
+        {data?.user?.image && (
+          <div>
+            <Image
+              alt="user-photo"
+              src={data.user.image}
+              width={50}
+              height={50}
+            />
+          </div>
+        )}
+
         <div className="flex items-center">
           <Button
             color="inherit"
             startIcon={<GoogleIcon />}
-            onClick={undefined}
+            onClick={() => {
+              signIn("google");
+            }}
             fullWidth
           >
             sign in
