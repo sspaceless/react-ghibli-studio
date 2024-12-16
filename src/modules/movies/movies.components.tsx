@@ -1,10 +1,10 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import { MovieCard } from "./components/movie-card";
 import moviesService from "./services/movies.service";
 import { QUERY_KEYS } from "~/shared/config/query-keys.const";
 import { Movie } from "./types/movies.type";
+import { MovieCard } from "./components/movie-card/movie-card.component";
 
 export const Movies: React.FC<{ movies: Movie[] }> = (props) => {
   const { data: movies } = useQuery({
@@ -30,5 +30,5 @@ export const Movies: React.FC<{ movies: Movie[] }> = (props) => {
     />
   ));
 
-  return <div className="mt-4 flex flex-col items-center gap-4">{list}</div>;
+  return <div className="mt-4 flex flex-wrap justify-center gap-4">{list}</div>;
 };

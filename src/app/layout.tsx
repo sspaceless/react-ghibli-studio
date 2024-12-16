@@ -3,7 +3,6 @@ import "./globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Head from "next/head";
-import Providers from "./providers";
 
 const futuraBook = localFont({
   src: "../../public/fonts/FuturaPT-Book.woff",
@@ -22,13 +21,11 @@ const RootLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <html lang="en">
-      <Head>
+    <html lang="en" suppressHydrationWarning>
+      <head>
         <link href="https://fonts.cdnfonts.com/css/futura-std-4" rel="stylesheet" />
-      </Head>
-      <body className={futuraBook.className}>
-        <Providers>{children}</Providers>
-      </body>
+      </head>
+      <body className={futuraBook.className}>{children}</body>
     </html>
   );
 };
