@@ -1,7 +1,15 @@
 import Image from "next/image";
 import { FC } from "react";
 
-import { MovieCardProps } from "./types";
+type MovieCardProps = {
+  id: string;
+  title: string;
+  originalTitle: string;
+  originalTitleRomanised: string;
+  description: string;
+  imageSrc: string;
+  bannerSrc: string;
+};
 
 export const MovieCard: FC<MovieCardProps> = ({
   id,
@@ -13,12 +21,10 @@ export const MovieCard: FC<MovieCardProps> = ({
   bannerSrc,
 }) => {
   const previewDescription =
-    description.length > 301
-      ? `${description.match(/^.{301}\w*/)}...`
-      : description;
+    description.length > 301 ? `${description.match(/^.{301}\w*/)}...` : description;
 
   return (
-    <div className="rounded-xl flex flex-col sm:flex-row gap-4 bg-white text-celadon">
+    <div className="bg-white text-celadon flex flex-col gap-4 rounded-xl sm:flex-row">
       <div className="sm:hidden">
         <Image
           src={bannerSrc}
@@ -37,7 +43,7 @@ export const MovieCard: FC<MovieCardProps> = ({
           height={500}
         />
       </div>
-      <div className="flex flex-col p-4 sm:pl-0 pt-0 sm:pt-4 justify-center">
+      <div className="flex flex-col justify-center p-4 pt-0 sm:pl-0 sm:pt-4">
         <span className="text-3xl">{title}</span>
         <span className="text-xl">{originalTitle}</span>
         <span className="text-xl">{originalTitleRomanised}</span>

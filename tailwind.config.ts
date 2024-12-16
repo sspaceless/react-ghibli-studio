@@ -11,16 +11,16 @@ const config: Config = {
       futura: ["var(--font-futura-book)"],
     },
     colors: {
-      white: "#ffffff",
-      accent: {
-        DEFAULT: "#009AEC",
-        dark: "#009AEC",
-      },
-      secondary: {
-        DEFAULT: "#bff3ff",
-        dark: "#bff3ff",
-      },
-      celadon: "#0086a4",
+      // white: "#ffffff",
+      // accent: {
+      //   DEFAULT: "#009AEC",
+      //   dark: "#009AEC",
+      // },
+      // secondary: {
+      //   DEFAULT: "#bff3ff",
+      //   dark: "#bff3ff",
+      // },
+      // celadon: "#0086a4",
     },
   },
 };
