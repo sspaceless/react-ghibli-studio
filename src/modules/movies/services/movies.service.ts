@@ -1,4 +1,5 @@
 import axios from "axios";
+
 import { Movie } from "../types/movies.type";
 
 class MoviesService {

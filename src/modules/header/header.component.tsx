@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Logo } from "~/shared/components/logo.component";
 import { ModeToggle } from "~/shared/components/mode-toggle.component";
 

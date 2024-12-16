@@ -1,7 +1,7 @@
 "use client";
 
-import { useTheme } from "next-themes";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
 export const Logo: React.FC = () => {
   const { resolvedTheme } = useTheme();

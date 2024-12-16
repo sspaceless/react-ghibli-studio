@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { FC } from "react";
+
 import { Card } from "~/shared/components/ui/card";
 
 type MovieCardProps = {
@@ -16,7 +17,6 @@ export const MovieCard: FC<MovieCardProps> = ({
   id,
   title,
   originalTitle,
-  originalTitleRomanised,
   description,
   bannerSrc,
 }) => {

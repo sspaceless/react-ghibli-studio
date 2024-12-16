@@ -1,6 +1,7 @@
 import { Header } from "~/modules/header/header.component";
 import { Movies } from "~/modules/movies/movies.components";
 import moviesService from "~/modules/movies/services/movies.service";
+
 import Providers from "./providers";
 
 const Home = async () => {
@@ -9,7 +10,7 @@ const Home = async () => {
   return (
     <>
       <Providers>
-        <main className="bg-background text-foreground flex flex-col p-4">
+        <main className="flex flex-col bg-background p-4 text-foreground">
           <Header />
           <Movies {...{ movies }} />
         </main>

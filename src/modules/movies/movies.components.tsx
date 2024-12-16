@@ -1,10 +1,12 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import moviesService from "./services/movies.service";
+
 import { QUERY_KEYS } from "~/shared/config/query-keys.const";
-import { Movie } from "./types/movies.type";
+
 import { MovieCard } from "./components/movie-card/movie-card.component";
+import moviesService from "./services/movies.service";
+import { Movie } from "./types/movies.type";
 
 export const Movies: React.FC<{ movies: Movie[] }> = (props) => {
   const { data: movies } = useQuery({
